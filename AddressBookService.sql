@@ -25,3 +25,6 @@ update AddressBookTable set Email='vani123@gmail.com' where FirstName='Vanitha';
 
 ------ UC5:Delete Values in Table ------
 delete AddressBookTable where FirstName='Vanitha';
+
+------ UC6:Retrieve Data using City or State------
+select * from AddressBookTable where city='Nellore' or State='AndhraPradesh';
