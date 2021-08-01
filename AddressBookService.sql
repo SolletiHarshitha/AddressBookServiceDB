@@ -31,3 +31,8 @@ select * from AddressBookTable where city='Nellore' or State='AndhraPradesh';
 
 ------ UC7:Count of City and State------
 Select Count(*) As Count,City,State from AddressBookTable group by City,State;
+
+------ UC8:Sort the name alphabetically using city------
+Insert into AddressBookTable 
+values('Rahul','P','Kanigiri Road','Pamur','AndhraPradesh',523108,9995559955,'rahul@gamil.com');
+select * from AddressBookTable where city='Pamur' order by FirstName;
