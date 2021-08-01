@@ -28,3 +28,6 @@ delete AddressBookTable where FirstName='Vanitha';
 
 ------ UC6:Retrieve Data using City or State------
 select * from AddressBookTable where city='Nellore' or State='AndhraPradesh';
+
+------ UC7:Count of City and State------
+Select Count(*) As Count,City,State from AddressBookTable group by City,State;
