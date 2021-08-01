@@ -42,3 +42,6 @@ alter table AddressBookTable add AddressBookName varchar(50),RelationType varcha
 
 update AddressBookTable set AddressBookName='Friends',RelationType='Friend' where FirstName='Sameera' ;
 update AddressBookTable set AddressBookName ='Family',RelationType ='Family' where zip=523108;
+
+----------UC10:Count the values using address book type -----------select COUNT(Rela
+select RelationType,COUNT(RelationType) as Count from AddressBookTable group by RelationType
