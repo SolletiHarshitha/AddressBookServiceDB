@@ -12,7 +12,7 @@ zip BigInt,
 PhoneNumber BigInt,
 Email varchar(200)
 )
------- UC 3->Insert Values to Table ------
+------ UC3:Insert Values into Table ------
 Insert into AddressBookTable(FirstName,LastName,Address,City,State,zip,PhoneNumber,Email) 
 values('Arjun','A','Nellore Road','Pamur','AndhraPradesh',523108,8858548393,'arjun@gmail.com'),
 ('Vanitha','P','Gandhi Nagar','Ongole','AndhraPradesh',523001,9995559955,'vanitha@gamil.com'),
