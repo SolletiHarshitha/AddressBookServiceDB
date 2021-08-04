@@ -92,3 +92,28 @@ select AddressBookName,Concat(FirstName,' ',LastName) as Name,Concat(Address,' ,
 from AddressBook 
 Full JOIN Contact_Person on AddressBookID=Contact_Person.AddressBook_ID 
 Full JOIN ContactType on AddressBookID=ContactType.AddressBook_ID;
+
+---------------UC13:Ensure all retrieve queries done with new table structure----------------
+
+------------------------Retrieve person belonging to a city or state--------------------------
+select AddressBookName,Concat(FirstName,' ',LastName) as Name,Concat(Address,' ,',City,' ,',State,' ,',zip) as Address,PhoneNumber,Email,ContactTypeName
+from Contact_Person 
+INNER JOIN  AddressBook on Contact_Person.AddressBook_ID = AddressBook.AddressBookID and (City='Pamur' or State='AndhraPradesh')
+INNER JOIN ContactType on Contact_Person.AddressBook_ID = ContactType.AddressBook_ID;
+
+-------------------Retrieve count of person belonging to a city or state or--------------------
+select City, State,COUNT(*) as Count from Contact_Person
+INNER JOIN AddressBook on Contact_Person.AddressBook_ID=AddressBook.AddressBookID
+group by City, State;
+
+-------------------------Retrieve entries sorted alphabetically-------------------------
+select AddressBookName,Concat(FirstName,' ',LastName) as Name,Concat(Address,' ,',City,' ,',State,' ,',zip) as Address,PhoneNumber,Email,ContactTypeName
+from Contact_Person 
+INNER JOIN  AddressBook on Contact_Person.AddressBook_ID = AddressBook.AddressBookID and (City='Pamur')
+INNER JOIN ContactType on Contact_Person.AddressBook_ID = ContactType.AddressBook_ID;
+
+------------------------Retrieve number of contact persons by type-----------------------
+select ContactTypeName,COUNT(*) as NumberofContacts from Contact_Person
+INNER JOIN ContactType on Contact_Person.AddressBook_ID = ContactType.AddressBook_ID
+Group By ContactTypeName;
+
